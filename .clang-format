@@ -1,0 +1,31 @@
+Language: Cpp
+BasedOnStyle: LLVM
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true
+  AfterClass: true
+  AfterStruct: true
+  AfterNamespace: false       # <- 关键
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeElse: false
+  BeforeCatch: false
+
+AllowShortLambdasOnASingleLine: Inline
+AllowShortFunctionsOnASingleLine: None
+AllowShortBlocksOnASingleLine: Never
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 180
+
+AlignAfterOpenBracket: Align
+AlignOperands: true
+PointerAlignment: Left
+Cpp11BracedListStyle: true
+BinPackArguments: false
+BinPackParameters: false

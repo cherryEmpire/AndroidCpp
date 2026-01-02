@@ -19,3 +19,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(handler)
 add_subdirectory(statemachine)
+add_subdirectory(can)
