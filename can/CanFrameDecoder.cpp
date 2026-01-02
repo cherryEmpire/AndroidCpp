@@ -29,7 +29,8 @@ uint64_t CanFrameDecoder::extractMotorolaValue(const std::vector<uint8_t> &data,
 
         // 在Motorola格式中，如果当前字节读完，需要移到下一个字节的MSB
         if (bit_index < 0 || bit_index / 8 >= static_cast<int32_t>(data.size())) {
-            throw std::out_of_range("Bit index out of range in Motorola decoding");
+            IC_LOG_ERROR("Bit index out of range in Motorola decoding");
+            return value;
         }
 
         uint32_t byte_index = bit_index / 8;
@@ -70,7 +71,8 @@ uint64_t CanFrameDecoder::extractIntelValue(const std::vector<uint8_t> &data,
         uint32_t bit_in_byte = current_bit % 8;
 
         if (byte_index >= data.size()) {
-            throw std::out_of_range("Byte index out of range");
+            IC_LOG_ERROR("Byte index out of range");
+            return value;
         }
 
         // 当前字节中可用的位数
